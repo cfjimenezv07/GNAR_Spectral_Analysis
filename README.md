@@ -16,34 +16,32 @@ Financial spillovers in interconnected systems, such as global banking networks,
 ### Main Results
 The R script files in the `R Code` folder should be used in the following order:
 
-#### 1. Setup, Data Preprocessing, and Network Topology Construction
-* [cite_start]**Aux_GNAR_spec.R**: Installs and loads required packages and libraries for managing time series with network-structured dependence (TS-NSD)[cite: 8, 31].
-* [cite_start]**read_and_format_data.R**: Loads the raw global banking log-volatility datasets [cite: 220, 222] [cite_start]and processes them into structured network time series objects[cite: 63].
-* [cite_start]**construct_network.R**: Constructs the underlying network adjacency matrices using empirical features such as Generalized Forecast Error Variance Decomposition (GFEVD) via a Lasso-VAR framework[cite: 222, 224, 225].
+#### 1. Core Functions & Methodologies
+* **Aux_GNAR_spec.R**: Auxiliary functions for the computation of spectral quantities such as parametric and nonparametric estimators, as well as tailor-made functions for the global bank network connectedness application.
 
-#### 2. Spectral Density Estimation
-* [cite_start]**net_spec_density.R**: Implements the main function to evaluate network time series spectral density matrices across Fourier frequencies[cite: 104, 124].
-* [cite_start]**parametric_estimation.R**: Computes the parametric spectrum by embedding model parameters directly into a $d$-dimensional network VAR coefficient representation (e.g., global GNAR or NAR settings)[cite: 78, 83, 102].
-* **nonparametric_estimation.R**: Constructs raw and smoothed Fourier periodogram matrices to offer data-driven, model-agnostic spectral alternatives[cite: 121, 124, 125, 156].
-* **constrained_optimization.R**: Enforces known physical topological or multi-hop adjacency constraints onto real-valued augmented spectral representations using matrix optimizations[cite: 159, 172, 174].
+#### 2. Network Analysis & Empirical Application
+* **Bank_N_conn.R**: Handles the bank network connectedness setup and structural modeling framework.
+* **Threshold_estimating.R**: Threshold estimation for the global bank network connectedness using the network of Demirer et al. (2018) published in the *Journal of Applied Econometrics* (JAE).
 
-#### 3. Network Coherence and Interdependence Metrics
-* **network_coherence.R**: Calculates squared coherence to determine frequency-specific cross-nodal dependencies across pairs of institutions[cite: 106].
-* **partial_coherence.R**: Evaluates partial coherence by inverting the spectral density matrix to separate direct network interactions from multi-stage/multi-hop pathways[cite: 3, 106].
+#### 3. Simulation Frameworks
+* **Simulation_5N_N.R**: Simulation framework implemented for a 5-node network configuration under a correctly specified data-generating process.
+* **Simulation_5N_N_MM.R**: Simulation framework for a 5-node network incorporating model misspecification, with model selection optimized via BIC.
+* **Simulation_10N_N.R**: Extended simulation setup implemented for a larger 10-node network structure.
+* **Simulation_10N_N_MM.R**: Extended 10-node simulation framework accounting for model misspecification.
 
-#### 4. Empirical Application & Volatility Transmission Visualizations
-* **global_bank_analysis.R**: Executes the complete financial empirical study monitoring systemic risk and frequency-dependent volatility co-movements among 57 major international banks[cite: 14, 230].
-* [cite_start]**plot_networks.R**: Generates visualizations of regional clusters, multi-stage neighborhood structures, phase relationships, and localized volatility transmission plots across variable time horizons[cite: 229, 237].
+#### 4. Plotting & Visualization
+* **Plots_Estimation_methods.R**: Generates empirical figures comparing the performance of the parametric and nonparametric spectral estimation methodologies.
+* **Plots_r_spec.R**: Visualizes the $r$-stage neighborhood spectral density responses and multi-stage frequency-domain connectedness patterns.
 
 ## Contact
-[cite_start]**arXiv link:** https://arxiv.org/abs/2510.06157 
+**arXiv link:** https://arxiv.org/abs/2510.06157
 
-[cite_start]**Cristian F. Jiménez-Varón** - cristian.jimenezvaron@york.ac.uk [cite: 1, 9]
+**Cristian F. Jiménez-Varón** - cristian.jimenezvaron@york.ac.uk
 
-[cite_start]**Marina I. Knight** - marina.knight@york.ac.uk [cite: 1, 9]
+**Marina I. Knight** - marina.knight@york.ac.uk
 
 ## Acknowledgements
-[cite_start]The authors gratefully acknowledge support from the EPSRC NeST Programme Grant EP/X002195/1.
+The authors gratefully acknowledge support from the EPSRC NeST Programme Grant EP/X002195/1.
 
 <br />
 <div align="center">
