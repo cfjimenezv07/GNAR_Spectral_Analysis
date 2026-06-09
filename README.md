@@ -45,5 +45,5 @@ The authors gratefully acknowledge support from the EPSRC NeST Programme Grant E
 
 <br />
 <div align="center">
-  <a href="https://github.com/cfjimenezv07/Network_Spectral_Analysis"><strong>Explore R code »</strong></a>
+  <a href="https://github.com/cfjimenezv07/GNAR_Spectral_Analysis"><strong>Explore R code »</strong></a>
 </div>
